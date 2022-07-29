@@ -1,10 +1,10 @@
 'use strict';
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+const secretNumber = Math.trunc(Math.random() * 20) + 1; //the secret number that the game matches the guess with
 let score = 20; //score data
-console.log(secretNumber);
-console.log(document.querySelector('.message').textContent);
+//console.log(secretNumber);
+//console.log(document.querySelector('.message').textContent);
 // document.querySelector('.message').textContent = '🎉 correct Number!';
-document.querySelector('.number').textContent = secretNumber;
+
 // document.querySelector('.score').textContent = 20;
 
 document.querySelector('.guess').value = 23;
@@ -16,11 +16,17 @@ document.querySelector('.check').addEventListener('click', function () {
   console.log(guess, typeof guess);
 
   if (!guess) {
-    //if no number
+    //if  number = 0 or no input
     document.querySelector('.message').textContent = '⛔ No number!';
   } else if (guess === secretNumber) {
     //if correct number
+    //display the correct number after the person guesses right
+    document.querySelector('.number').textContent = secretNumber;
     document.querySelector('.message').textContent = '🎉 correct Number!';
+    //style the body backGoundColor to green
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    //increase size of number after winning with css style
+    document.querySelector('.number').style.width = '30rem';
   } else if (guess > secretNumber) {
     if (score > 1) {
       //if number too high
