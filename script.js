@@ -33,8 +33,8 @@ document.querySelector('.check').addEventListener('click', function () {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
-
-    
+  }
+    //unified the two conditions together makes the code less and decrease chance of bugs
     else if (guess !== secretNumber) {
       if (score > 1) {
         // if guess not equal to secret number it will tell the user if to high or too low
